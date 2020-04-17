@@ -1,0 +1,6 @@
+main: me.themgrf.inventoryapi.Main
+name: InventoryAPI
+version: ${project.version}
+api-version: 1.13
+author: TheMGRF
+description: A super simple and light weight Inventory API
