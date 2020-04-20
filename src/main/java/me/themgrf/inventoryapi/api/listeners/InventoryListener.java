@@ -2,6 +2,7 @@ package me.themgrf.inventoryapi.api.listeners;
 
 import me.themgrf.inventoryapi.api.Inventory;
 import me.themgrf.inventoryapi.api.InventoryAPI;
+import me.themgrf.inventoryapi.api.InventoryItem;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -14,19 +15,15 @@ public class InventoryListener implements Listener {
 
     @EventHandler
     public void onInvClick(InventoryClickEvent e) {
-        Player p = (Player) e.getWhoClicked();
-        for (Inventory invs : InventoryAPI.getInventories()) {
-            if (invs.getInventory().equals(e.getClickedInventory())) {
-                // TODO: Temporarily disable to check if needed
-//                if (e.getAction() == InventoryAction.MOVE_TO_OTHER_INVENTORY || e.getAction() == InventoryAction.COLLECT_TO_CURSOR) {
-//                    e.setCancelled(true);
-//                }
+        Player player = (Player) e.getWhoClicked();
+        for (Inventory inv : InventoryAPI.getInventories()) {
+            if (inv.getInventory().equals(e.getInventory())) {
                 e.setCancelled(true);
-                try {
-                    int slot = e.getSlot();
-                    invs.getSlot(slot).getItemListener().onItemClick(p, e.getClick());
-                } catch (Exception exception) {
-                    exception.printStackTrace();
+
+                int slot = e.getSlot();
+                InventoryItem item = inv.getSlot(slot);
+                if (item != null && item.getItemListener() != null) {
+                    item.getItemListener().onItemClick(player, e.getClick());
                 }
                 return;
             }
