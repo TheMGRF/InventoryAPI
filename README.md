@@ -6,17 +6,22 @@ InventoryAPI is a basic API for creating inventories easily and quickly with bui
 It aims at making inventory creation simpler and more uniform across different plugins.
 
 ## Developers
-To use the InventoryAPI in your plugin run the following commands:
+To install InventoryAPI locally run the following commands:
 ```
 git clone https://github.com/TheMGRF/InventoryAPI.git && cd InventoryAPI
 mvn install
 ```
-Then add this into your dependencies section in your projects pom.xml
+## Maven
+```xml
+<repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+</repository>
+```
 ```xml
 <dependency>
-    <groupId>me.themgrf</groupId>
+    <groupId>com.github.TheMGRF</groupId>
     <artifactId>InventoryAPI</artifactId>
     <version>1.0.0</version>
-    <scope>provided</scope>
 </dependency>
 ```
