@@ -16,7 +16,7 @@ Then add this into your dependencies section in your projects pom.xml
 <dependency>
     <groupId>me.themgrf</groupId>
     <artifactId>InventoryAPI</artifactId>
-    <version>0.0.1</version>
+    <version>1.0.0</version>
     <scope>provided</scope>
 </dependency>
 ```
