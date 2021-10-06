@@ -6,6 +6,7 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Class for storing information on API inventories
@@ -18,12 +19,13 @@ public class Inventory {
 
     private int inventorySlots = 0;
 
-    private final HashMap<Integer, InventoryItem> slots = new HashMap<>();
+    private final Map<Integer, InventoryItem> slots = new HashMap<>();
 
     private org.bukkit.inventory.Inventory inventory;
 
     /**
      * Constructor for creating an inventory of a specific type
+     *
      * @param name The name to give the inventory
      * @param type The specified type of the inventory
      */
@@ -34,7 +36,8 @@ public class Inventory {
 
     /**
      * Constructor for creating a chest inventory with a specified amount of slots
-     * @param name The name to give the inventory
+     *
+     * @param name  The name to give the inventory
      * @param slots The amount of slots to give the inventory
      */
     public Inventory(String name, int slots) {
@@ -44,6 +47,7 @@ public class Inventory {
 
     /**
      * Open the inventory to a player
+     *
      * @param player The player to open the inventory to
      */
     public void open(Player player) {
@@ -52,6 +56,7 @@ public class Inventory {
 
     /**
      * Get the Bukkit inventory of the API inventory
+     *
      * @return The Bukkit form on the API inventory
      */
     public org.bukkit.inventory.Inventory getInventory() {
@@ -73,6 +78,7 @@ public class Inventory {
 
     /**
      * Get the type of inventory
+     *
      * @return The type of inventory
      */
     public InventoryType getType() {
@@ -81,6 +87,7 @@ public class Inventory {
 
     /**
      * Get the name of the inventory
+     *
      * @return The name of the inventory
      */
     public String getName() {
@@ -89,8 +96,9 @@ public class Inventory {
 
     /**
      * Set the item in a specific slot
-     * @param slot The slot to set the item in
-     * @param item The item to use in the slot
+     *
+     * @param slot         The slot to set the item in
+     * @param item         The item to use in the slot
      * @param itemListener The item listener to associate with the item
      */
     public void setSlot(int slot, ItemStack item, ItemListener itemListener) {
@@ -99,6 +107,7 @@ public class Inventory {
 
     /**
      * Get the inventory item in a specific slot
+     *
      * @param Slot The slot to get the inventory item from
      * @return An inventory item in a specific slot
      */

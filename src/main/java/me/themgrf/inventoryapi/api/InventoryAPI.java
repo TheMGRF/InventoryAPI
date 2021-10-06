@@ -15,39 +15,42 @@ import java.util.Map;
  */
 public class InventoryAPI {
 
-    private static final ArrayList<Inventory> inventories = new ArrayList<>();
+    private static final List<Inventory> INVENTORIES = new ArrayList<>();
 
     /**
      * Create an inventory with a specified inventory type
+     *
      * @param name The name to give the inventory
      * @param type The type of inventory to use
      * @return A named inventory of a specific type
      */
     public static Inventory createInventory(String name, InventoryType type) {
         Inventory inv = new Inventory(name, type);
-        inventories.add(inv);
+        INVENTORIES.add(inv);
         return inv;
     }
 
     /**
      * Create a chest inventory with a specified amount of slots
-     * @param name The name to give the inventory
+     *
+     * @param name  The name to give the inventory
      * @param slots The amount of slots to give the inventory
      * @return A named chest inventory with a specified amount of slots
      */
     public static Inventory createInventory(String name, int slots) {
         Inventory inv = new Inventory(name, slots);
-        inventories.add(inv);
+        INVENTORIES.add(inv);
         return inv;
     }
 
     /**
      * Create an item
-     * @param displayName The name of the item
-     * @param description The lore of the item
-     * @param material The material of the item
+     *
+     * @param displayName  The name of the item
+     * @param description  The lore of the item
+     * @param material     The material of the item
      * @param enchantments The enchantments of the item
-     * @param amount The amount of the item
+     * @param amount       The amount of the item
      * @return A formatted item stack
      */
     public static ItemStack createItem(String displayName, List<String> description, Material material, Map<Enchantment, Integer> enchantments, int amount) {
@@ -55,12 +58,13 @@ public class InventoryAPI {
     }
 
     /**
+     * Create an item
      *
-     * @param displayName The name of the item
-     * @param description The lore of the item
-     * @param itemstack The item stack to use as a base for the item
+     * @param displayName  The name of the item
+     * @param description  The lore of the item
+     * @param itemstack    The item stack to use as a base for the item
      * @param enchantments The enchantments of the item
-     * @param amount The amount of the item
+     * @param amount       The amount of the item
      * @return A formatted item stack
      */
     public static ItemStack createItem(String displayName, List<String> description, ItemStack itemstack, Map<Enchantment, Integer> enchantments, int amount) {
@@ -95,9 +99,10 @@ public class InventoryAPI {
 
     /**
      * Get all of the inventories stored in the API
+     *
      * @return All of the inventories stored in the API
      */
-    public static ArrayList<Inventory> getInventories() {
-        return inventories;
+    public static List<Inventory> getInventories() {
+        return INVENTORIES;
     }
 }

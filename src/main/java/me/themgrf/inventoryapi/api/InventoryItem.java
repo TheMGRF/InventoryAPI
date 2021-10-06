@@ -13,7 +13,8 @@ public class InventoryItem {
 
     /**
      * Constructor for creating an inventory item
-     * @param item The item to be used in the inventory
+     *
+     * @param item         The item to be used in the inventory
      * @param itemListener The listener to be associated with the item
      */
     public InventoryItem(ItemStack item, ItemListener itemListener) {
@@ -23,6 +24,7 @@ public class InventoryItem {
 
     /**
      * Get the item to be used in the inventory
+     *
      * @return The item to be used in the inventory
      */
     public ItemStack getItem() {
@@ -31,6 +33,7 @@ public class InventoryItem {
 
     /**
      * Get the item listener to be associated with the item
+     *
      * @return The item listener to be associated with the item
      */
     public ItemListener getItemListener() {
